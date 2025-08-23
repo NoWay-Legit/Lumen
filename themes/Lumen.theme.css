@@ -1,10 +1,38 @@
 /**
  * @name Lumen
+ * @description Modern dark Discord theme in gray + purple palette
  * @author NoWayLegit
- * @version 1.0.0
- * @description A clean grey+purple Discord theme inspired by Midnight
- * @source https://github.com/NoWayLegit/lumen-discord-theme
+ * @version 1.2.0
+ * @source https://github.com/NoWay-Legit/Lumen
+ * @website https://no-way-legit.github.io/Lumen/
  */
 
-@import url('https://raw.githubusercontent.com/NoWay-Legit/Lumen/refs/heads/main/src/lumen.css');
+@import url("https://raw.githubusercontent.com/NoWay-Legit/Lumen/refs/heads/main/src/lumen.css");
 
+:root {
+  /* ===== Colors ===== */
+  --background-primary: #1e1e2f;
+  --background-secondary: #2a2a3d;
+  --background-tertiary: #181828;
+
+  --accent-color: #a78bfa;
+  --accent-color-hover: #c4b5fd;
+
+  /* ===== Text ===== */
+  --text-normal: #e0e0e0;
+  --text-muted: #a1a1aa;
+  --text-inverse: #ffffff;
+
+  /* ===== Fonts ===== */
+  --font-primary: "Inter", sans-serif;
+  --font-display: "Montserrat", sans-serif;
+
+  /* ===== Layout ===== */
+  --sidebar-background: #181828;
+  --server-icon-size: 48px;
+
+  /* ===== Misc ===== */
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --radius-sm: 4px;
+}
