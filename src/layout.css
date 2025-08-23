@@ -1,0 +1,10 @@
+/* Layout styles */
+.sidebar {
+  background: var(--color-bg-alt);
+  font-family: var(--font-heading);
+}
+
+.topbar {
+  background: #191926;
+  border-bottom: 1px solid rgba(162, 119, 255, 0.3);
+}

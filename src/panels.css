@@ -1,0 +1,12 @@
+/* Panels */
+.user-profile {
+  background: var(--color-bg-alt);
+  border-radius: var(--border-radius);
+  color: var(--color-text);
+}
+
+.card {
+  background: var(--color-bg);
+  border: 1px solid rgba(162, 119, 255, 0.2);
+  border-radius: var(--border-radius);
+}
