@@ -1,93 +1,95 @@
-/**** GOOGLE FONTS ****/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
-
-/**** WALLPAPER BACKGROUND ****/
-.appMount-3lHmkl, .app-3xd6d0 {
-  background: var(--bg-shading), url(var(--wallpaper-url)) center/cover no-repeat fixed !important;
-}
-
-/**** COMMON VARIABLES ****/
-:root {
-  --common-bg: var(--card-background);
-  --common-blur: var(--card-blur);
-  --common-border: var(--card-border);
-  --common-radius: var(--radius-card);
+/**** GLOBAL BACKGROUND ****/
+.appMount_c99875 {
+  background: var(--wallpaper) center/cover no-repeat fixed !important;
+  font-family: var(--font-primary);
 }
 
 /**** SERVER LIST ****/
-.wrapper-1_HaEi, .guilds-2JjMmN {
-  background: var(--common-bg) !important;
-  backdrop-filter: blur(var(--common-blur)) !important;
-  border: var(--common-border) !important;
-  border-radius: var(--common-radius) !important;
-}
-
-/**** FRIEND LIST ****/
-.friendList-2aN-3A, .friendsWrapper-1sZFR_ {
-  background: var(--common-bg) !important;
-  backdrop-filter: blur(var(--common-blur)) !important;
-  border: var(--common-border) !important;
-  border-radius: var(--common-radius) !important;
+.wrapper_ef3116 {
+  background: rgba(0,0,0,var(--background-opacity)) !important;
+  backdrop-filter: blur(var(--background-blur));
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
 }
 
 /**** CHANNEL LIST ****/
-.sidebar-1tnWFu, .container-1NXEtd {
-  background: var(--common-bg) !important;
-  backdrop-filter: blur(var(--common-blur)) !important;
-  border: var(--common-border) !important;
-  border-radius: var(--common-radius) !important;
+.container__2637a {
+  background: rgba(0,0,0,var(--background-opacity)) !important;
+  backdrop-filter: blur(var(--background-blur));
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
 }
 
 /**** CHAT AREA ****/
-.chatContent-3KubbW {
-  background: var(--common-bg) !important;
-  backdrop-filter: blur(var(--common-blur)) !important;
-  border: var(--common-border) !important;
-  border-radius: var(--common-radius) !important;
+.chat_f75fb0,
+.chatContent_f75fb0 {
+  background: rgba(0,0,0,var(--background-opacity)) !important;
+  backdrop-filter: blur(var(--background-blur));
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
 }
 
 /**** MEMBER LIST ****/
-.container-2o3qEW, .members-3WRCEx {
-  background: var(--common-bg) !important;
-  backdrop-filter: blur(var(--common-blur)) !important;
-  border: var(--common-border) !important;
-  border-radius: var(--common-radius) !important;
+.container_c8ffbb,
+.members_c8ffbb,
+.member_c8ffbb {
+  background: rgba(0,0,0,var(--background-opacity)) !important;
+  backdrop-filter: blur(var(--background-blur));
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
 }
 
-/**** MODALS & MENUS ****/
-.modal-3O0aXp, .root-1gCeng,
-.menu-2TXYjN, .submenu-2-ysNh {
-  background: var(--common-bg) !important;
-  backdrop-filter: blur(var(--common-blur)) !important;
-  border: var(--common-border) !important;
-  border-radius: var(--common-radius) !important;
+/**** SETTINGS PANELS ****/
+.layer__2efaa,
+.standardSidebarView__23e6b {
+  background: rgba(0,0,0,var(--background-opacity)) !important;
+  backdrop-filter: blur(var(--background-blur));
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
 }
 
-/**** BUTTONS ****/
-.button-1EGGcP, .lookFilled-yCfaCM {
-  background: var(--accent-color) !important;
-  color: #fff !important;
-  border-radius: calc(var(--common-radius) / 2) !important;
-  border: var(--common-border);
-  transition: background 0.2s ease;
-}
-.button-1EGGcP:hover, .lookFilled-yCfaCM:hover {
-  background: var(--hover-color) !important;
+/**** BOTTOM PANELS (Voice, User area, Spotify etc.) ****/
+.panels_c48ade,
+.container_b2ca13 {
+  background: rgba(0,0,0,var(--background-opacity)) !important;
+  backdrop-filter: blur(var(--background-blur));
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
 }
 
-/**** LINKS ****/
-a {
+/**** PLACEHOLDERS (Loading messages etc.) ****/
+.wrapper_d852db,
+.wrapper_fc8177 {
+  background: rgba(0,0,0,var(--background-opacity)) !important;
+  backdrop-filter: blur(var(--background-blur));
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+}
+
+/**** ACCENTS ****/
+a,
+.textLink__1a38f {
   color: var(--link-color) !important;
 }
-a:hover {
-  text-decoration: underline;
+
+button,
+.button__66e8c {
+  background-color: var(--accent-color) !important;
+  border-radius: var(--border-radius);
+  color: #fff !important;
+  transition: background 0.25s;
+}
+
+button:hover,
+.button__66e8c:hover {
+  background-color: #3a98d4 !important;
 }
 
 /**** FONTS ****/
-body, span, div, button, input, textarea {
-  font-family: var(--font-primary) !important;
+* {
+  font-family: var(--font-secondary);
 }
-h1, h2, h3, h4, h5, h6, strong {
-  font-family: var(--font-secondary) !important;
+
+h1, h2, h3, strong {
+  font-family: var(--font-primary);
 }

@@ -1,10 +1,29 @@
 /**
  * @name Lumen
- * @description Transparent Vencord theme with blur, custom fonts and modern UI (inspired by ClearVision)
- * @author ...
- * @version 1.0.0
- * @invite vencord
- * @source https://github.com/YourGitHub/LumenTheme/blob/main/lumen.css
+ * @author YourName
+ * @version 1.2.0
+ * @description Transparent & modern theme with Windows 11 style blur and wallpaper
+ * @source https://github.com/YourUsername/LumenTheme
  */
 
-@import url("https://yourgithubusername.github.io/LumenTheme/lumen.css");
+/* === Fonts === */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Inter:wght@400;500;600&display=swap");
+
+/* === Source === */
+@import url("https://yourusername.github.io/LumenTheme/lumen.css");
+
+/* === Variables === */
+:root {
+  --font-primary: "Montserrat", sans-serif;
+  --font-secondary: "Inter", sans-serif;
+
+  --wallpaper: url("https://i.imgur.com/NhSPeS7.jpg");
+
+  --accent-color: #4cc9f0;
+  --link-color: #4895ef;
+
+  --background-opacity: 0.7;
+  --background-blur: 14px;
+  --border-radius: 14px;
+  --border-color: rgba(255, 255, 255, 0.15);
+}
