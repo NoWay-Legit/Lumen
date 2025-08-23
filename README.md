@@ -19,7 +19,7 @@ Inspired by popular themes like ClearVision & Frosted Glass.
 ## 📥 Installation
 
 ### Vencord
-1. Download [`Lumen.theme.css`](https://github.com/YourUsername/LumenTheme/blob/main/Lumen.theme.css).
+1. Download [`Lumen.theme.css`](https://github.com/NoWay-Legit/Lumen/blob/main/Lumen.theme.css).
 2. Move it to your Vencord themes folder:  
    ```
    %appdata%/Vencord/themes
@@ -27,7 +27,7 @@ Inspired by popular themes like ClearVision & Frosted Glass.
 3. Enable **Lumen** in your Vencord settings.
 
 ### BetterDiscord (optional)
-1. Download [`Lumen.theme.css`](https://github.com/YourUsername/LumenTheme/blob/main/Lumen.theme.css).
+1. Download [`Lumen.theme.css`](https://github.com/NoWay-Legit/Lumen/blob/main/Lumen.theme.css).
 2. Place it inside:
    ```
    %appdata%/BetterDiscord/themes
@@ -58,7 +58,7 @@ You can easily edit variables inside `Lumen.theme.css`:
 ---
 
 ## 📝 Credits
-- **Theme Author**: YourName  
+- **Theme Author**: NoWayLegit  
 - Inspired by [ClearVision](https://github.com/ClearVision), [Chillax](https://github.com/warrayquipsome/Chillax), [Frosted Glass](https://github.com/DiscordStyles/FrostedGlass)  
 
 ---
