@@ -1,105 +1,71 @@
-/* =========================================================
-   Lumen – Source (no custom-property declarations here)
-   Follows the ClearVision / FrostedGlass style structure
-   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-/* 1) Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
-
-/* Apply Inter globally */
-html, body, #app-mount, * {
-  font-family: var(--font-ui) !important;
-  font-weight: var(--font-weight);
+* {
+  font-family: var(--font-primary) !important;
+  font-weight: var(--font-weight) !important;
 }
 
-/* 2) Global background layer */
-#app-mount, .app-2CXKsg, .appMount-2yBXZl, .appMount-3lHmkl {
-  position: relative;
-  background: transparent !important;
-}
-
-#app-mount::before {
+/* Background */
+body::before {
   content: "";
   position: fixed;
-  inset: 0;
-  background: var(--background-image) center / cover no-repeat fixed;
-  filter: blur(var(--background-blur));
-  pointer-events: none;
-  z-index: -2;
-}
-
-#app-mount::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, var(--background-dim));
-  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background-image) center/cover no-repeat;
+  opacity: var(--background-opacity);
+  filter: blur(var(--background-blur)) brightness(var(--background-brightness));
   z-index: -1;
 }
 
-/* 3) Translucent surfaces (panels/cards) */
-.guilds-2JjMmN,
+/* Custom button icon */
+:root[style*="--custom-icon-toggle: on"] .button-1EGGcP svg {
+  display: none;
+}
+:root[style*="--custom-icon-toggle: on"] .button-1EGGcP {
+  background: var(--custom-button-icon) center/contain no-repeat;
+}
+
+/* UI separation */
 .sidebar-1tnWFu,
-.chat-2ZfjoI,
-.container-2cd8Mz,
-.membersWrap-3NUR2t,
-.content-1jQy2l,
-.panels-3wFtMD {
-  background: rgba(0, 0, 0, var(--surface-alpha)) !important;
-  backdrop-filter: blur(var(--surface-blur));
-  border-radius: var(--surface-radius);
+.chatContent-3KubbW,
+.container-2o3qEW {
+  border: 1px solid var(--color-border);
 }
 
-/* 4) Explicit separators (the red-boxed areas from your screenshot) */
-.guilds-2JjMmN {                    /* left-most server rail */
-  border-right: 1px solid var(--divider-color);
+/* Custom colors */
+:root[style*="--custom-colors: on"] .button-3bklZh,
+:root[style*="--custom-colors: on"] .tabBarItem-3dfX8P,
+:root[style*="--custom-colors: on"] .wrapper-1ZcZW- {
+  color: var(--color-primary) !important;
 }
 
-.sidebar-1tnWFu {                    /* channel list column */
-  border-right: 1px solid var(--divider-color);
+:root[style*="--custom-colors: on"] .button-3bklZh:hover,
+:root[style*="--custom-colors: on"] .tabBarItem-3dfX8P:hover {
+  color: var(--color-primary-hover) !important;
 }
 
-.membersWrap-3NUR2t, .container-2cd8Mz, .members-3WRCEx {  /* members column */
-  border-left: 1px solid var(--divider-color);
+:root[style*="--custom-colors: on"] .button-3bklZh:active {
+  color: var(--color-primary-active) !important;
 }
 
-.title-31SJ6t, .container-ZMc96U {   /* top title bar */
-  border-bottom: 1px solid var(--divider-color);
-  background: rgba(0, 0, 0, var(--surface-alpha)) !important;
-  backdrop-filter: blur(var(--surface-blur));
-  border-top-left-radius: var(--surface-radius);
-  border-top-right-radius: var(--surface-radius);
+:root[style*="--custom-colors: on"] .mention {
+  background-color: var(--color-accent) !important;
 }
 
-.form-3gdLxP {                       /* message composer area */
-  border-top: 1px solid var(--divider-color);
-  background: rgba(0, 0, 0, var(--surface-alpha)) !important;
-  backdrop-filter: blur(var(--surface-blur));
-  border-bottom-left-radius: var(--surface-radius);
-  border-bottom-right-radius: var(--surface-radius);
+:root[style*="--custom-colors: on"] .success-1xPzm3 {
+  color: var(--color-success) !important;
 }
 
-.panels-3wFtMD {                     /* bottom account/voice panel (left) */
-  border-top: 1px solid var(--divider-color);
+:root[style*="--custom-colors: on"] .danger-3n2iYN {
+  color: var(--color-danger) !important;
 }
 
-/* 5) Optional custom Home icon (enabled only when toggle = 1)
-   Target the guilds "Home" button safely */
-:root[style*="--use-custom-home-icon: 1"] .wrapper-3kah-n .childWrapper-1j_1ub,
-:root[style*="--use-custom-home-icon: 1"] [aria-label="Home"] .childWrapper-1j_1ub {
-  background-image: var(--home-icon) !important;
-  background-size: cover !important;
-  background-position: center !important;
-  color: transparent !important;
+:root[style*="--custom-colors: on"] .warning-2w6sxk {
+  color: var(--color-warning) !important;
 }
 
-/* Keep original icon hidden when custom is on */
-:root[style*="--use-custom-home-icon: 1"] .wrapper-3kah-n .childWrapper-1j_1ub svg,
-:root[style*="--use-custom-home-icon: 1"] [aria-label="Home"] .childWrapper-1j_1ub svg {
-  opacity: 0 !important;
-}
-
-/* 6) Minor polish */
-.scroller-WSmht3, .scroller-2XLwLg, .contentRegion-3HkfJJ, .contentRegionScroller-2_GT_N {
-  background: transparent !important;
+:root[style*="--custom-colors: on"] .speaking-1wT0eM {
+  border-color: var(--color-info) !important;
 }
