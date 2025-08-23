@@ -1,8 +1,8 @@
 /**
  * @name Lumen
+ * @description A modern translucent theme with Windows 11 vibes
  * @author NoWay
- * @version 1.0.1
- * @description A modern, clean Discord theme with Windows 11 inspired blur and transparency.
+ * @version 1.1.0
  * @source https://github.com/NoWay-Legit/Lumen
  * @updateUrl https://noway-legit.github.io/Lumen/Lumen.theme.css
  */
@@ -10,16 +10,32 @@
 @import url("https://noway-legit.github.io/Lumen/lumen.css");
 
 :root {
-  --font-primary: "Montserrat", sans-serif;
-  --font-chat: "Inter", sans-serif;
-  --accent: #4f46e5;
-  --accent-hover: #6366f1;
-  --background: rgba(24, 24, 27, 0.65);
-  --border: rgba(255, 255, 255, 0.08);
-  --wallpaper: url("https://i.imgur.com/Trjv4Gp.jpg");
-  --wallpaper-blur: 12px;
-  --transparency: 0.65;
-  --blur: 18px;
-  --border-radius: 12px;
-  --border-thickness: 1px;
+  /* ===== Fonts ===== */
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "Montserrat", sans-serif;
+  --font-weight: 400;
+  --font-weight-bold: 600;
+
+  /* ===== Background ===== */
+  --background-image: url("https://i.imgur.com/AjZJ8nZ.jpg"); /* Windows 11 dark wallpaper */
+  --background-blur: 10px;
+  --background-opacity: 0.85;
+
+  /* ===== Custom Home Icon ===== */
+  --custom-home-icon: url("https://i.imgur.com/4M7IWwP.png");
+  --custom-home-icon-enabled: 1;
+
+  /* ===== UI Styling ===== */
+  --ui-border-radius: 8px;
+  --ui-border-width: 1px;
+  --ui-border-color: hsla(0, 0%, 100%, 0.15);
+
+  /* ===== Colors ===== */
+  --color-primary: hsla(220, 70%, 55%, 1);
+  --color-secondary: hsla(220, 10%, 40%, 1);
+  --color-accent: hsla(280, 60%, 60%, 1);
+  --color-success: hsla(140, 60%, 45%, 1);
+  --color-danger: hsla(0, 70%, 55%, 1);
+  --color-warning: hsla(35, 90%, 55%, 1);
+  --color-info: hsla(200, 80%, 55%, 1);
 }

@@ -1,49 +1,42 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Inter:wght@400;500;600&display=swap");
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@400;600&display=swap');
 
-body, .appMount_c99875 {
-  background: var(--background) !important;
-  background-image: var(--wallpaper) !important;
+/* Background */
+.appMount-3lHmkl {
+  background: var(--background-image) center/cover no-repeat !important;
+}
+.appMount-3lHmkl::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(var(--background-blur));
+  background-color: rgba(0,0,0,calc(1 - var(--background-opacity)));
+  z-index: -1;
+}
+
+/* Font application */
+.chatContent-3KubbW,
+.markup-eYLPri {
+  font-family: var(--font-primary) !important;
+  font-weight: var(--font-weight);
+}
+.sidebar-1tnWFu,
+.container-1NXEtd {
+  font-family: var(--font-secondary) !important;
+  font-weight: var(--font-weight-bold);
+}
+
+/* Custom Home Icon */
+.wrapper-3kah-n[data-list-id="guildsnav"] .childWrapper-1j_1ub {
+  background-image: var(--custom-home-icon-enabled, 0) url(var(--custom-home-icon)) !important;
   background-size: cover !important;
   background-position: center !important;
 }
 
-.app_de4237, .container__2637a, .chat_f75fb0, .members_c8ffbb, .sidebar_c48ade {
-  background: var(--background) !important;
-  backdrop-filter: blur(var(--blur));
-  border: var(--border-thickness) solid var(--border);
-  border-radius: var(--border-radius);
-}
-
-.messageContent_f9f2ca, .markup_f9f2ca {
-  font-family: var(--font-chat) !important;
-}
-
-* {
-  font-family: var(--font-primary), sans-serif;
-}
-
-.button_f67531, .lookFilled-yCfaCM {
-  background-color: var(--accent) !important;
-  border-radius: var(--border-radius);
-}
-.button_f67531:hover, .lookFilled-yCfaCM:hover {
-  background-color: var(--accent-hover) !important;
-}
-
-.wrapper_ef3116 {
-  background-color: var(--background);
-  border: var(--border-thickness) solid var(--border);
-  border-radius: var(--border-radius);
-}
-
-.container__2637a {
-  border: var(--border-thickness) solid var(--border);
-}
-
-.members_c8ffbb {
-  border: var(--border-thickness) solid var(--border);
-}
-
-.chatContent_f75fb0 {
-  border: var(--border-thickness) solid var(--border);
+/* UI Borders */
+.container-1oeRFJ,
+.sidebar-1tnWFu,
+.chatContent-3KubbW {
+  border: var(--ui-border-width) solid var(--ui-border-color);
+  border-radius: var(--ui-border-radius);
 }

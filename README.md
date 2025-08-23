@@ -1,19 +1,21 @@
-# Lumen Theme
+# ✨ Lumen Theme
 
-Lumen is a clean, modern Discord theme inspired by Windows 11 design.
+A modern translucent Discord theme with Windows 11 vibes 🌌
 
-## Features
-- Windows 11 style wallpaper background
-- Transparency and blur effects
-- Rounded corners and borders for separation
-- Inter font for chat, Montserrat for UI
-- Clean and minimal style
+## 📥 Installation
+1. Download **Lumen.theme.css** from this repository.
+2. Place it into your Vencord / BetterDiscord themes folder.
+3. Enable it from your client settings.
 
-## Installation
-1. Install [Vencord](https://vencord.dev/)
-2. Place **Lumen.theme.css** in your themes folder
-3. Enable the theme in Vencord settings
+## 🎨 Customization
+You can edit **Lumen.theme.css** to change:
+- Fonts (`--font-primary`, `--font-secondary`, `--font-weight`)
+- Background image & blur
+- Custom Home button icon
+- Colors (HSLA format)
+- Borders & radius
 
-## Updates
-The theme automatically updates via GitHub Pages.
+## 🔗 Source
+Theme is powered by a source file `lumen.css`, automatically imported from GitHub Pages.
 
+Enjoy your new theme 💜
