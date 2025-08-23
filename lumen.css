@@ -1,108 +1,96 @@
 /**** GOOGLE FONTS ****/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Inter:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
-/**** THEME VARIABLES ****/
-:root {
-    --background-image: url("https://i.imgur.com/yourBackground.jpg");
-    --background-overlay: rgba(0, 0, 0, 0.55);
-    --accent-color: #5865f2;
-    --text-color: #e6e6e6;
-    --font: "Montserrat", "Inter", sans-serif;
+/**** BASE THEME ****/
+
+/* App background */
+.appMount-3lHmkl, 
+.app-3xd6d0 {
+  background: var(--background-shading, rgba(0,0,0,0.35)) !important;
+  backdrop-filter: blur(var(--backdrop-blur, 14px)) !important;
 }
 
-/**** GLOBAL APP STYLES ****/
-.appMount-2yBXZl {
-    background: var(--background-overlay), var(--background-image) center/cover no-repeat !important;
-    background-attachment: fixed !important;
-    font-family: var(--font) !important;
+/* Home tab */
+.forumOrHome-2tE1Sb {
+  background: transparent !important;
 }
 
-/**** TRANSPARENT AREAS ****/
-.container__2637a { /* Channel list */
-    background: transparent !important;
-    backdrop-filter: blur(12px);
+/* Spotify controls background fix */
+.panels-3wFtMD span {
+  background: transparent !important;
 }
 
-.chat_f75fb0,
-.chatContent_f75fb0 { /* Chat area */
-    background: rgba(0, 0, 0, 0.4) !important;
-    backdrop-filter: blur(15px);
+/* Server list */
+.wrapper-1_HaEi, 
+.guilds-2JjMmN {
+  background: var(--background-tertiary, rgba(15, 15, 20, 0.4)) !important;
+  border-radius: var(--radius-primary, 12px);
 }
 
-.container_c8ffbb,
-.members_c8ffbb { /* Member list */
-    background: rgba(0, 0, 0, 0.35) !important;
-    backdrop-filter: blur(10px);
+/* Channel list */
+.sidebar-1tnWFu, 
+.container-1NXEtd {
+  background: var(--background-secondary, rgba(20, 20, 30, 0.5)) !important;
+  border-radius: var(--radius-secondary, 8px);
 }
 
-/**** UI ELEMENTS ****/
-.button_f5639f,
+/* Main chat area */
+.chatContent-3KubbW {
+  background: var(--background-primary, rgba(10, 10, 15, 0.6)) !important;
+  border-radius: var(--radius-primary, 12px);
+}
+
+/* Message list */
+.messagesWrapper-RpOMA3 {
+  background: transparent !important;
+}
+
+/* Member list */
+.container-2o3qEW, 
+.members-3WRCEx, 
+.member-2gU6Ar {
+  background: var(--background-secondary, rgba(20, 20, 30, 0.5)) !important;
+  border-radius: var(--radius-secondary, 8px);
+}
+
+/* Placeholder for unloaded messages */
+.wrapper-15CKyy, 
+.wrapper-1HIH0j {
+  background: transparent !important;
+}
+
+/* Buttons */
+.button-1EGGcP, 
 .lookFilled-yCfaCM {
-    background-color: var(--accent-color) !important;
-    color: #fff !important;
-    border-radius: 10px;
-    font-family: var(--font);
-    transition: all 0.2s ease;
+  background: var(--button-background, #4cc9f0) !important;
+  color: var(--button-text, #fff) !important;
+  border-radius: var(--radius-buttons, 6px) !important;
+  transition: background 0.2s ease;
+}
+.button-1EGGcP:hover, 
+.lookFilled-yCfaCM:hover {
+  background: var(--button-hover, #3a86ff) !important;
 }
 
-.button_f5639f:hover {
-    transform: scale(1.05);
-    opacity: 0.95;
+/* Links */
+a {
+  color: var(--link-color, #4895ef) !important;
+}
+a:hover {
+  text-decoration: underline;
+  background: var(--hover-color, rgba(76, 201, 240, 0.2));
 }
 
-.name-28HaxV { /* Channel names */
-    font-weight: 600;
-    font-family: var(--font);
-    color: var(--accent-color) !important;
+/* Fonts */
+body, 
+span, 
+div, 
+button, 
+input, 
+textarea {
+  font-family: var(--font-primary, 'Montserrat', sans-serif) !important;
 }
-
-.title-29uC1r,
-.header-2V-4Sw { /* Section headers */
-    font-family: "Montserrat", sans-serif !important;
-    font-weight: 700;
-    color: #fff !important;
-}
-
-.username-2b1r56 { /* Usernames */
-    font-family: "Inter", sans-serif !important;
-    font-weight: 600;
-    color: var(--text-color);
-}
-
-/**** MODALS & POPUPS ****/
-.modal-3O0aXp, /* Generic modals */
-.root-1gCeng { 
-    background: rgba(0, 0, 0, 0.6) !important;
-    backdrop-filter: blur(18px);
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.header-1ffhsl,
-.footer-31IekZ {
-    background: transparent !important;
-    font-family: var(--font);
-    color: var(--text-color);
-}
-
-.menu-2TXYjN, /* Context menus */
-.submenu-2-ysNh {
-    background: rgba(20, 20, 20, 0.85) !important;
-    backdrop-filter: blur(12px);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.menu-2TXYjN .item-1OdjEX,
-.submenu-2-ysNh .item-1OdjEX {
-    font-family: var(--font);
-    color: var(--text-color);
-    transition: all 0.15s ease;
-}
-
-.menu-2TXYjN .item-1OdjEX:hover,
-.submenu-2-ysNh .item-1OdjEX:hover {
-    background: var(--accent-color);
-    color: #fff;
-    border-radius: 6px;
+h1, h2, h3, h4, h5, h6, strong {
+  font-family: var(--font-secondary, 'Inter', sans-serif) !important;
 }
