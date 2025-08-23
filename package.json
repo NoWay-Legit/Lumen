@@ -1,9 +1,0 @@
-{
-  "name": "lumen-discord-theme",
-  "version": "1.0.0",
-  "description": "Gray & purple Discord theme (Inter + Montserrat)",
-  "scripts": {
-    "build": "echo 'build step can be added with sass or postcss'"
-  },
-  "license": "MIT"
-}
