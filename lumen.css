@@ -1,42 +1,105 @@
-/* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@400;600&display=swap');
+/* =========================================================
+   Lumen – Source (no custom-property declarations here)
+   Follows the ClearVision / FrostedGlass style structure
+   ========================================================= */
 
-/* Background */
-.appMount-3lHmkl {
-  background: var(--background-image) center/cover no-repeat !important;
+/* 1) Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* Apply Inter globally */
+html, body, #app-mount, * {
+  font-family: var(--font-ui) !important;
+  font-weight: var(--font-weight);
 }
-.appMount-3lHmkl::before {
+
+/* 2) Global background layer */
+#app-mount, .app-2CXKsg, .appMount-2yBXZl, .appMount-3lHmkl {
+  position: relative;
+  background: transparent !important;
+}
+
+#app-mount::before {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
-  backdrop-filter: blur(var(--background-blur));
-  background-color: rgba(0,0,0,calc(1 - var(--background-opacity)));
+  background: var(--background-image) center / cover no-repeat fixed;
+  filter: blur(var(--background-blur));
+  pointer-events: none;
+  z-index: -2;
+}
+
+#app-mount::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, var(--background-dim));
+  pointer-events: none;
   z-index: -1;
 }
 
-/* Font application */
-.chatContent-3KubbW,
-.markup-eYLPri {
-  font-family: var(--font-primary) !important;
-  font-weight: var(--font-weight);
-}
+/* 3) Translucent surfaces (panels/cards) */
+.guilds-2JjMmN,
 .sidebar-1tnWFu,
-.container-1NXEtd {
-  font-family: var(--font-secondary) !important;
-  font-weight: var(--font-weight-bold);
+.chat-2ZfjoI,
+.container-2cd8Mz,
+.membersWrap-3NUR2t,
+.content-1jQy2l,
+.panels-3wFtMD {
+  background: rgba(0, 0, 0, var(--surface-alpha)) !important;
+  backdrop-filter: blur(var(--surface-blur));
+  border-radius: var(--surface-radius);
 }
 
-/* Custom Home Icon */
-.wrapper-3kah-n[data-list-id="guildsnav"] .childWrapper-1j_1ub {
-  background-image: var(--custom-home-icon-enabled, 0) url(var(--custom-home-icon)) !important;
+/* 4) Explicit separators (the red-boxed areas from your screenshot) */
+.guilds-2JjMmN {                    /* left-most server rail */
+  border-right: 1px solid var(--divider-color);
+}
+
+.sidebar-1tnWFu {                    /* channel list column */
+  border-right: 1px solid var(--divider-color);
+}
+
+.membersWrap-3NUR2t, .container-2cd8Mz, .members-3WRCEx {  /* members column */
+  border-left: 1px solid var(--divider-color);
+}
+
+.title-31SJ6t, .container-ZMc96U {   /* top title bar */
+  border-bottom: 1px solid var(--divider-color);
+  background: rgba(0, 0, 0, var(--surface-alpha)) !important;
+  backdrop-filter: blur(var(--surface-blur));
+  border-top-left-radius: var(--surface-radius);
+  border-top-right-radius: var(--surface-radius);
+}
+
+.form-3gdLxP {                       /* message composer area */
+  border-top: 1px solid var(--divider-color);
+  background: rgba(0, 0, 0, var(--surface-alpha)) !important;
+  backdrop-filter: blur(var(--surface-blur));
+  border-bottom-left-radius: var(--surface-radius);
+  border-bottom-right-radius: var(--surface-radius);
+}
+
+.panels-3wFtMD {                     /* bottom account/voice panel (left) */
+  border-top: 1px solid var(--divider-color);
+}
+
+/* 5) Optional custom Home icon (enabled only when toggle = 1)
+   Target the guilds "Home" button safely */
+:root[style*="--use-custom-home-icon: 1"] .wrapper-3kah-n .childWrapper-1j_1ub,
+:root[style*="--use-custom-home-icon: 1"] [aria-label="Home"] .childWrapper-1j_1ub {
+  background-image: var(--home-icon) !important;
   background-size: cover !important;
   background-position: center !important;
+  color: transparent !important;
 }
 
-/* UI Borders */
-.container-1oeRFJ,
-.sidebar-1tnWFu,
-.chatContent-3KubbW {
-  border: var(--ui-border-width) solid var(--ui-border-color);
-  border-radius: var(--ui-border-radius);
+/* Keep original icon hidden when custom is on */
+:root[style*="--use-custom-home-icon: 1"] .wrapper-3kah-n .childWrapper-1j_1ub svg,
+:root[style*="--use-custom-home-icon: 1"] [aria-label="Home"] .childWrapper-1j_1ub svg {
+  opacity: 0 !important;
+}
+
+/* 6) Minor polish */
+.scroller-WSmht3, .scroller-2XLwLg, .contentRegion-3HkfJJ, .contentRegionScroller-2_GT_N {
+  background: transparent !important;
 }
