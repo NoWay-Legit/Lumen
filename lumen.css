@@ -2,95 +2,92 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
-/**** BASE THEME ****/
-
-/* App background */
-.appMount-3lHmkl, 
-.app-3xd6d0 {
-  background: var(--background-shading, rgba(0,0,0,0.35)) !important;
-  backdrop-filter: blur(var(--backdrop-blur, 14px)) !important;
+/**** WALLPAPER BACKGROUND ****/
+.appMount-3lHmkl, .app-3xd6d0 {
+  background: var(--bg-shading), url(var(--wallpaper-url)) center/cover no-repeat fixed !important;
 }
 
-/* Home tab */
-.forumOrHome-2tE1Sb {
-  background: transparent !important;
+/**** COMMON VARIABLES ****/
+:root {
+  --common-bg: var(--card-background);
+  --common-blur: var(--card-blur);
+  --common-border: var(--card-border);
+  --common-radius: var(--radius-card);
 }
 
-/* Spotify controls background fix */
-.panels-3wFtMD span {
-  background: transparent !important;
+/**** SERVER LIST ****/
+.wrapper-1_HaEi, .guilds-2JjMmN {
+  background: var(--common-bg) !important;
+  backdrop-filter: blur(var(--common-blur)) !important;
+  border: var(--common-border) !important;
+  border-radius: var(--common-radius) !important;
 }
 
-/* Server list */
-.wrapper-1_HaEi, 
-.guilds-2JjMmN {
-  background: var(--background-tertiary, rgba(15, 15, 20, 0.4)) !important;
-  border-radius: var(--radius-primary, 12px);
+/**** FRIEND LIST ****/
+.friendList-2aN-3A, .friendsWrapper-1sZFR_ {
+  background: var(--common-bg) !important;
+  backdrop-filter: blur(var(--common-blur)) !important;
+  border: var(--common-border) !important;
+  border-radius: var(--common-radius) !important;
 }
 
-/* Channel list */
-.sidebar-1tnWFu, 
-.container-1NXEtd {
-  background: var(--background-secondary, rgba(20, 20, 30, 0.5)) !important;
-  border-radius: var(--radius-secondary, 8px);
+/**** CHANNEL LIST ****/
+.sidebar-1tnWFu, .container-1NXEtd {
+  background: var(--common-bg) !important;
+  backdrop-filter: blur(var(--common-blur)) !important;
+  border: var(--common-border) !important;
+  border-radius: var(--common-radius) !important;
 }
 
-/* Main chat area */
+/**** CHAT AREA ****/
 .chatContent-3KubbW {
-  background: var(--background-primary, rgba(10, 10, 15, 0.6)) !important;
-  border-radius: var(--radius-primary, 12px);
+  background: var(--common-bg) !important;
+  backdrop-filter: blur(var(--common-blur)) !important;
+  border: var(--common-border) !important;
+  border-radius: var(--common-radius) !important;
 }
 
-/* Message list */
-.messagesWrapper-RpOMA3 {
-  background: transparent !important;
+/**** MEMBER LIST ****/
+.container-2o3qEW, .members-3WRCEx {
+  background: var(--common-bg) !important;
+  backdrop-filter: blur(var(--common-blur)) !important;
+  border: var(--common-border) !important;
+  border-radius: var(--common-radius) !important;
 }
 
-/* Member list */
-.container-2o3qEW, 
-.members-3WRCEx, 
-.member-2gU6Ar {
-  background: var(--background-secondary, rgba(20, 20, 30, 0.5)) !important;
-  border-radius: var(--radius-secondary, 8px);
+/**** MODALS & MENUS ****/
+.modal-3O0aXp, .root-1gCeng,
+.menu-2TXYjN, .submenu-2-ysNh {
+  background: var(--common-bg) !important;
+  backdrop-filter: blur(var(--common-blur)) !important;
+  border: var(--common-border) !important;
+  border-radius: var(--common-radius) !important;
 }
 
-/* Placeholder for unloaded messages */
-.wrapper-15CKyy, 
-.wrapper-1HIH0j {
-  background: transparent !important;
-}
-
-/* Buttons */
-.button-1EGGcP, 
-.lookFilled-yCfaCM {
-  background: var(--button-background, #4cc9f0) !important;
-  color: var(--button-text, #fff) !important;
-  border-radius: var(--radius-buttons, 6px) !important;
+/**** BUTTONS ****/
+.button-1EGGcP, .lookFilled-yCfaCM {
+  background: var(--accent-color) !important;
+  color: #fff !important;
+  border-radius: calc(var(--common-radius) / 2) !important;
+  border: var(--common-border);
   transition: background 0.2s ease;
 }
-.button-1EGGcP:hover, 
-.lookFilled-yCfaCM:hover {
-  background: var(--button-hover, #3a86ff) !important;
+.button-1EGGcP:hover, .lookFilled-yCfaCM:hover {
+  background: var(--hover-color) !important;
 }
 
-/* Links */
+/**** LINKS ****/
 a {
-  color: var(--link-color, #4895ef) !important;
+  color: var(--link-color) !important;
 }
 a:hover {
   text-decoration: underline;
-  background: var(--hover-color, rgba(76, 201, 240, 0.2));
 }
 
-/* Fonts */
-body, 
-span, 
-div, 
-button, 
-input, 
-textarea {
-  font-family: var(--font-primary, 'Montserrat', sans-serif) !important;
+/**** FONTS ****/
+body, span, div, button, input, textarea {
+  font-family: var(--font-primary) !important;
 }
 h1, h2, h3, h4, h5, h6, strong {
-  font-family: var(--font-secondary, 'Inter', sans-serif) !important;
+  font-family: var(--font-secondary) !important;
 }
