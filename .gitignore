@@ -1,11 +1,13 @@
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
+# Node
 node_modules/
-dist/
+npm-debug.log
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Logs
+logs
 *.log
-*.tmp
-tmp/
-assets/*.psd
-assets/*.xcf

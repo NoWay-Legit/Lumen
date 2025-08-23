@@ -1,29 +1,25 @@
 /**
  * @name Lumen
- * @author YourName
- * @version 1.2.0
- * @description Transparent & modern theme with Windows 11 style blur and wallpaper
- * @source https://github.com/YourUsername/LumenTheme
+ * @author NoWay
+ * @version 1.0.1
+ * @description A modern, clean Discord theme with Windows 11 inspired blur and transparency.
+ * @source https://github.com/NoWay-Legit/Lumen
+ * @updateUrl https://noway-legit.github.io/Lumen/Lumen.theme.css
  */
 
-/* === Fonts === */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Inter:wght@400;500;600&display=swap");
+@import url("https://noway-legit.github.io/Lumen/lumen.css");
 
-/* === Source === */
-@import url("https://yourusername.github.io/LumenTheme/lumen.css");
-
-/* === Variables === */
 :root {
   --font-primary: "Montserrat", sans-serif;
-  --font-secondary: "Inter", sans-serif;
-
-  --wallpaper: url("https://i.imgur.com/NhSPeS7.jpg");
-
-  --accent-color: #4cc9f0;
-  --link-color: #4895ef;
-
-  --background-opacity: 0.7;
-  --background-blur: 14px;
-  --border-radius: 14px;
-  --border-color: rgba(255, 255, 255, 0.15);
+  --font-chat: "Inter", sans-serif;
+  --accent: #4f46e5;
+  --accent-hover: #6366f1;
+  --background: rgba(24, 24, 27, 0.65);
+  --border: rgba(255, 255, 255, 0.08);
+  --wallpaper: url("https://i.imgur.com/Trjv4Gp.jpg");
+  --wallpaper-blur: 12px;
+  --transparency: 0.65;
+  --blur: 18px;
+  --border-radius: 12px;
+  --border-thickness: 1px;
 }
