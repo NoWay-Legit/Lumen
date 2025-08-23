@@ -1,8 +1,8 @@
 /**
  * @name Lumen
- * @description A modern translucent theme with Windows 11 vibes
+ * @description Translucent Windows-11-style theme with custom background, borders and optional custom Home icon
  * @author NoWay
- * @version 1.1.0
+ * @version 1.3.0
  * @source https://github.com/NoWay-Legit/Lumen
  * @updateUrl https://noway-legit.github.io/Lumen/Lumen.theme.css
  */
@@ -10,32 +10,41 @@
 @import url("https://noway-legit.github.io/Lumen/lumen.css");
 
 :root {
-  /* ===== Fonts ===== */
-  --font-primary: "Inter", sans-serif;
-  --font-secondary: "Montserrat", sans-serif;
+  /* =========================
+     Fonts (global)
+     ========================= */
+  --font-ui: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
   --font-weight: 400;
-  --font-weight-bold: 600;
 
-  /* ===== Background ===== */
-  --background-image: url("https://i.imgur.com/AjZJ8nZ.jpg"); /* Windows 11 dark wallpaper */
-  --background-blur: 10px;
-  --background-opacity: 0.85;
+  /* =========================
+     Background
+     ========================= */
+  --background-image: url("https://i.imgur.com/AjZJ8nZ.jpg"); /* dark Win11 wallpaper (jpg/png) */
+  --background-blur: 10px;      /* 8–12px recommended */
+  --background-dim: 0.35;       /* extra darkening over the wallpaper */
 
-  /* ===== Custom Home Icon ===== */
-  --custom-home-icon: url("https://i.imgur.com/4M7IWwP.png");
-  --custom-home-icon-enabled: 1;
+  /* =========================
+     Surfaces & borders
+     ========================= */
+  --surface-alpha: 0.45;        /* transparency of panels */
+  --surface-blur: 10px;         /* panel blur */
+  --surface-radius: 12px;
+  --divider-color: hsla(0, 0%, 100%, 0.12);
 
-  /* ===== UI Styling ===== */
-  --ui-border-radius: 8px;
-  --ui-border-width: 1px;
-  --ui-border-color: hsla(0, 0%, 100%, 0.15);
+  /* =========================
+     Custom Home icon (toggle)
+     ========================= */
+  --use-custom-home-icon: 0; /* 1 = enable, 0 = disable */
+  --home-icon: url("https://i.imgur.com/4M7IWwP.png");
 
-  /* ===== Colors ===== */
-  --color-primary: hsla(220, 70%, 55%, 1);
-  --color-secondary: hsla(220, 10%, 40%, 1);
+  /* =========================
+     HSLA color slots (optional)
+     ========================= */
+  --color-primary: hsla(235, 85%, 64%, 1);
+  --color-secondary: hsla(220, 10%, 26%, 1);
   --color-accent: hsla(280, 60%, 60%, 1);
   --color-success: hsla(140, 60%, 45%, 1);
-  --color-danger: hsla(0, 70%, 55%, 1);
+  --color-danger: hsla(0, 72%, 58%, 1);
   --color-warning: hsla(35, 90%, 55%, 1);
-  --color-info: hsla(200, 80%, 55%, 1);
+  --color-info: hsla(210, 85%, 60%, 1);
 }
