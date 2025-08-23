@@ -27,4 +27,4 @@ Open `Lumen.theme.css` and edit variables to your liking:
 ## 📌 Credits
 - Inspired by [ClearVision](https://github.com/ClearVision/ClearVision-v6)
 - Inspired by [Chillax](https://github.com/chillax-theme/chillax)
-- Made with ❤️ by You
+- Made with ❤️ by NoWayLegit
