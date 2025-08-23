@@ -1,44 +1,40 @@
 /**
  * @name Lumen
+ * @description Gray & purple Discord theme (Inter + Montserrat)
  * @author You
- * @version 1.0
- * @description Customizable Discord theme
- * @source https://github.com/yourname/Lumen
+ * @version 1.0.0
  */
 
-@import url("https://github.com/yourname/Lumen/raw/main/lumen.css");
-
 :root {
-  /* Fonts */
-  --font-primary: 'Inter', sans-serif;
-  --font-weight: 400;
+  --font-primary: Inter, sans-serif;
+  --font-heading: Montserrat, sans-serif;
 
-  /* Background */
-  --background-image: url("https://example.com/background.jpg");
-  --background-opacity: 0.9;
-  --background-blur: 6px;
-  --background-brightness: 1;
+  --color-bg: #1e1e2e;
+  --color-bg-alt: #2a2a3c;
+  --color-accent: #a277ff;
+  --color-text: #ffffff;
+  --color-text-muted: #b0b0c3;
+  --border-radius: 12px;
+}
 
-  /* Custom button icon */
-  --custom-button-icon: url("https://example.com/icon.png");
-  --custom-icon-toggle: on; /* on / off */
+/* Layout */
+.sidebar {
+  background: var(--color-bg-alt);
+  font-family: var(--font-heading);
+}
+.topbar {
+  background: #191926;
+  border-bottom: 1px solid rgba(162, 119, 255, 0.3);
+}
 
-  /* Custom colors toggle */
-  --custom-colors: on; /* on / off */
-
-  /* Colors */
-  --color-primary: hsla(220, 85%, 65%, 1);
-  --color-primary-hover: hsla(220, 85%, 70%, 1);
-  --color-primary-active: hsla(220, 85%, 55%, 1);
-
-  --color-accent: hsla(280, 75%, 60%, 1);
-
-  --color-success: hsla(145, 63%, 42%, 1);
-  --color-danger: hsla(0, 85%, 60%, 1);
-  --color-warning: hsla(38, 92%, 50%, 1);
-  --color-info: hsla(200, 90%, 55%, 1);
-
-  --color-background: hsla(220, 10%, 15%, 1);
-  --color-foreground: hsla(220, 10%, 20%, 1);
-  --color-border: hsla(220, 10%, 30%, 1);
+/* Panels */
+.user-profile {
+  background: var(--color-bg-alt);
+  border-radius: var(--border-radius);
+  color: var(--color-text);
+}
+.card {
+  background: var(--color-bg);
+  border: 1px solid rgba(162, 119, 255, 0.2);
+  border-radius: var(--border-radius);
 }
