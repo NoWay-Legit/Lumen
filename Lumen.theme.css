@@ -1,8 +1,8 @@
 /**
  * @name Lumen
- * @description Translucent Windows-11-style theme with custom background, borders and optional custom Home icon
+ * @description Translucent Windows-11-style theme with custom background and borders
  * @author NoWay
- * @version 1.3.0
+ * @version 1.3.1
  * @source https://github.com/NoWay-Legit/Lumen
  * @updateUrl https://noway-legit.github.io/Lumen/Lumen.theme.css
  */
@@ -10,36 +10,26 @@
 @import url("https://noway-legit.github.io/Lumen/lumen.css");
 
 :root {
-  /* =========================
-     Fonts (global)
-     ========================= */
-  --font-ui: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
+  /* Font */
+  --font-ui: "Inter", system-ui, sans-serif;
   --font-weight: 400;
 
-  /* =========================
-     Background
-     ========================= */
-  --background-image: url("https://i.imgur.com/AjZJ8nZ.jpg"); /* dark Win11 wallpaper (jpg/png) */
-  --background-blur: 10px;      /* 8–12px recommended */
-  --background-dim: 0.35;       /* extra darkening over the wallpaper */
+  /* Background */
+  --background-image: url("https://i.imgur.com/AjZJ8nZ.jpg");
+  --background-blur: 10px;
+  --background-dim: 0.35;
 
-  /* =========================
-     Surfaces & borders
-     ========================= */
-  --surface-alpha: 0.45;        /* transparency of panels */
-  --surface-blur: 10px;         /* panel blur */
+  /* Surfaces */
+  --surface-alpha: 0.45;
+  --surface-blur: 10px;
   --surface-radius: 12px;
   --divider-color: hsla(0, 0%, 100%, 0.12);
 
-  /* =========================
-     Custom Home icon (toggle)
-     ========================= */
-  --use-custom-home-icon: 0; /* 1 = enable, 0 = disable */
+  /* Home icon */
+  --use-custom-home-icon: 0;
   --home-icon: url("https://i.imgur.com/4M7IWwP.png");
 
-  /* =========================
-     HSLA color slots (optional)
-     ========================= */
+  /* Colors */
   --color-primary: hsla(235, 85%, 64%, 1);
   --color-secondary: hsla(220, 10%, 26%, 1);
   --color-accent: hsla(280, 60%, 60%, 1);
