@@ -1,0 +1,3 @@
+/* main.css — собирает все части темы */
+@import url('./lumen.css');
+@import url('./animations.css');

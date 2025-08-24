@@ -1,0 +1,68 @@
+/* lumen.css — содержит переменные, шрифты и базовые стили */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@400;600;700&display=swap');
+
+/* Tokens */
+:root {
+  container-name: root;
+
+  /* sizing */
+  --gap: 12px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* motion */
+  --list-item-transition: 0.2s ease;
+  --border-hover-transition: 0.2s ease;
+
+  /* colors (defaults, overridden in theme file) */
+  --bg-4: hsla(230, 20%, 10%, 1);
+  --bg-3: hsla(230, 20%, 13%, 1);
+  --bg-2: hsla(230, 20%, 16%, 1);
+  --bg-1: hsla(230, 20%, 20%, 1);
+
+  --text-1: hsla(0, 0%, 95%, 1);
+  --text-2: hsla(0, 0%, 80%, 0.9);
+
+  --hover: hsla(230, 20%, 40%, 0.10);
+  --active: hsla(230, 20%, 40%, 0.20);
+}
+
+/* Base app */
+body, .app__160d8, #app-mount {
+  background: var(--bg-4);
+  color: var(--text-1);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Panels */
+.container-2RRFHK,
+.chatContent-3KubbW,
+.sidebar-1tnWFu {
+  background: var(--bg-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--active);
+  transition: background var(--list-item-transition), border-color var(--border-hover-transition);
+}
+.container-2RRFHK:hover,
+.chatContent-3KubbW:hover,
+.sidebar-1tnWFu:hover {
+  border-color: var(--hover);
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  color: var(--text-1);
+}
+
+/* Links */
+a { color: var(--text-1); transition: color var(--list-item-transition); }
+a:hover { color: var(--text-2); }
+
+/* Messages */
+.message__5126c { transition: background var(--list-item-transition); }
+.message__5126c:hover { background: var(--hover); }
