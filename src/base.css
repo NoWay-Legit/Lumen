@@ -8,6 +8,7 @@
   --secondary-color: #99aab5;
   --font: 'Sora', 'Rubik', sans-serif;
   --blur: 8px;
+  --text-glow: none;
 }
 
 /* Font everywhere */
@@ -47,6 +48,14 @@ body::before {
 }
 [class*="button-"]:hover {
   background-color: var(--secondary-color) !important;
+}
+
+/* Glow for headers and messages */
+[class*="title-"], 
+[class*="username-"], 
+[class*="messageContent-"], 
+[class*="name-"] {
+  text-shadow: var(--text-glow);
 }
 
 /* Respect reduced motion */
