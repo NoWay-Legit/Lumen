@@ -1,68 +1,80 @@
-/* lumen.css — содержит переменные, шрифты и базовые стили */
+/* Lumen Core Styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@400;600;700&display=swap");
 
-/* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@400;600;700&display=swap');
-
-/* Tokens */
+/* === Root Variables (from theme) === */
 :root {
-  container-name: root;
+  /* Fonts */
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: 'Montserrat', sans-serif;
 
-  /* sizing */
-  --gap: 12px;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
+  --font-primary-weight: 400;
+  --font-secondary-weight: 600;
 
-  /* motion */
-  --list-item-transition: 0.2s ease;
-  --border-hover-transition: 0.2s ease;
+  /* Glow & Shadows */
+  --text-glow: 0 0 6px hsla(0, 0%, 100%, 0.75);
+  --shadow-strong: 0 4px 16px hsla(0, 0%, 0%, 0.6);
+  --shadow-soft: 0 2px 8px hsla(0, 0%, 0%, 0.4);
 
-  /* colors (defaults, overridden in theme file) */
-  --bg-4: hsla(230, 20%, 10%, 1);
-  --bg-3: hsla(230, 20%, 13%, 1);
-  --bg-2: hsla(230, 20%, 16%, 1);
-  --bg-1: hsla(230, 20%, 20%, 1);
+  /* Transitions */
+  --transition-fast: 0.25s ease;
+  --transition-slow: 0.5s ease;
 
-  --text-1: hsla(0, 0%, 95%, 1);
-  --text-2: hsla(0, 0%, 80%, 0.9);
+  /* Custom Colors (enabled/disabled via theme) */
+  --use-custom-colors: 1;
 
-  --hover: hsla(230, 20%, 40%, 0.10);
-  --active: hsla(230, 20%, 40%, 0.20);
+  --background-primary: hsla(0, 0%, 5%, 1);
+  --background-secondary: hsla(0, 0%, 8%, 1);
+  --background-tertiary: hsla(0, 0%, 12%, 1);
+
+  --text-color: hsla(0, 0%, 95%, 1);
+  --text-muted: hsla(0, 0%, 65%, 1);
 }
 
-/* Base app */
-body, .app__160d8, #app-mount {
-  background: var(--bg-4);
-  color: var(--text-1);
-  font-family: 'Inter', system-ui, sans-serif;
+/* === Base Layouts === */
+body, .appMount-3lHmkl {
+  background: var(--background-primary);
+  color: var(--text-color);
+  font-family: var(--font-primary);
+  font-weight: var(--font-primary-weight);
+  transition: background var(--transition-slow), color var(--transition-fast);
 }
 
-/* Panels */
+/* Panels & Containers */
 .container-2RRFHK,
 .chatContent-3KubbW,
-.sidebar-1tnWFu {
-  background: var(--bg-3);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--active);
-  transition: background var(--list-item-transition), border-color var(--border-hover-transition);
-}
-.container-2RRFHK:hover,
-.chatContent-3KubbW:hover,
-.sidebar-1tnWFu:hover {
-  border-color: var(--hover);
+.sidebar-1tnWFu,
+.container-1D34oG {
+  background: var(--background-secondary);
+  box-shadow: var(--shadow-soft);
+  border-radius: 12px;
+  transition: background var(--transition-slow), box-shadow var(--transition-fast);
 }
 
 /* Headings */
-h1, h2, h3, h4 {
-  font-family: 'Montserrat', 'Inter', system-ui, sans-serif;
-  font-weight: 600;
-  color: var(--text-1);
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-secondary-weight);
+  color: var(--text-color);
+  text-shadow: none;
+  transition: color var(--transition-fast), text-shadow var(--transition-fast);
 }
 
-/* Links */
-a { color: var(--text-1); transition: color var(--list-item-transition); }
-a:hover { color: var(--text-2); }
+/* Paragraphs & Text */
+span, p, div {
+  font-family: var(--font-primary);
+  font-weight: var(--font-primary-weight);
+  color: var(--text-muted);
+  transition: color var(--transition-fast), text-shadow var(--transition-fast);
+}
 
-/* Messages */
-.message__5126c { transition: background var(--list-item-transition); }
-.message__5126c:hover { background: var(--hover); }
+/* Glow on hover */
+span:hover, p:hover, a:hover, h1:hover, h2:hover, h3:hover {
+  text-shadow: var(--text-glow);
+  color: var(--text-color);
+}
+
+/* Strong Shadows for modals */
+.modal-3Crloo, .layer-86YKbF {
+  box-shadow: var(--shadow-strong);
+  background: var(--background-tertiary);
+}
