@@ -1,39 +1,39 @@
-/* Base CSS for Lumen Theme (minimal, no glow, no indicators, no bg image) */
+/* Base CSS for Lumen Theme (HSLA-based) */
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600&family=Rubik:wght@400;500;700&display=swap');
 
-/* 1) Global font + page background */
+/* Global font + page background */
 html, body, #app-mount {
-  background: var(--bg-color, #000) !important;
+  background: var(--bg-color) !important;
 }
 * {
-  font-family: var(--font-primary, 'Rubik', system-ui, -apple-system, Segoe UI, Arial, sans-serif) !important;
+  font-family: var(--font-primary) !important;
 }
 
-/* 2) Map Lumen variables -> Discord design tokens (reliable approach) */
+/* Map HSLA variables -> Discord tokens */
 :root {
   /* Surfaces */
-  --background-primary: var(--panel-bg, #0e0f12);
-  --background-secondary: var(--panel-bg, #0e0f12);
-  --background-secondary-alt: var(--panel-bg, #0e0f12);
-  --background-tertiary: var(--panel-bg, #0e0f12);
-  --background-floating: var(--panel-bg, #0e0f12);
-  --modal-background: var(--panel-bg, #0e0f12);
-  --channeltextarea-background: var(--panel-bg, #0e0f12);
+  --background-primary: var(--panel-bg);
+  --background-secondary: var(--panel-bg);
+  --background-secondary-alt: var(--panel-bg);
+  --background-tertiary: var(--panel-bg);
+  --background-floating: var(--panel-bg);
+  --modal-background: var(--panel-bg);
+  --channeltextarea-background: var(--panel-bg);
 
   /* Text */
-  --header-primary: var(--text-color, #fff);
-  --header-secondary: var(--text-muted, #b8b8b8);
-  --text-normal: var(--text-color, #fff);
-  --text-muted: var(--text-muted, #b8b8b8);
+  --header-primary: var(--text-color);
+  --header-secondary: var(--text-muted);
+  --text-normal: var(--text-color);
+  --text-muted: var(--text-muted);
 
-  /* Interactive (links, buttons, toggles) */
-  --interactive-normal: var(--accent-color, #7aa2ff);
-  --interactive-hover: var(--accent-color-hover, #9bb9ff);
-  --interactive-active: var(--accent-color, #7aa2ff);
-  --interactive-muted: #6e6e6e;
+  /* Interactive */
+  --interactive-normal: var(--accent-color);
+  --interactive-hover: var(--accent-color-hover);
+  --interactive-active: var(--accent-color);
+  --interactive-muted: hsla(0, 0%, 43%, 1); /* dark gray */
 }
 
-/* 3) Basic link styling (lean, respects Discord tokens) */
+/* Links */
 a {
   color: var(--interactive-normal);
   transition: color .2s ease;
@@ -42,7 +42,7 @@ a:hover {
   color: var(--interactive-hover);
 }
 
-/* 4) Optional rounding for common containers (very safe selectors) */
+/* Rounding */
 [class^="container-"],
 [class*=" container-"],
 [class^="content-"],
