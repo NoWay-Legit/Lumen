@@ -3,13 +3,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600&family=Rubik:wght@300;400;600&display=swap');
 
 :root {
-  --background-image: none;
+  --font: 'Sora', 'Rubik', sans-serif;
+
+  /* defaults (overridden by Lumen.theme.css) */
   --main-color: #7289da;
   --secondary-color: #99aab5;
-  --font: 'Sora', 'Rubik', sans-serif;
-  --blur: 8px;
 
-  /* Fallback glow */
+  --background-image: none;
+  --bg-size: cover;
+  --bg-position: center center;
+  --bg-repeat: no-repeat;
+  --bg-blur: 8px;
+
   --text-glow: none;
   --text-glow-hover-color: rgba(255,255,255,0.8);
   --text-glow-hover: 0 0 6px var(--text-glow-hover-color),
@@ -17,7 +22,7 @@
                      0 0 18px var(--text-glow-hover-color);
 }
 
-/* Font everywhere */
+/* font */
 html, body, #app-mount, [id="app-mount"] {
   font-family: var(--font) !important;
   -webkit-font-smoothing: antialiased;
@@ -25,18 +30,21 @@ html, body, #app-mount, [id="app-mount"] {
   text-rendering: optimizeLegibility;
 }
 
-/* Background behind UI */
+/* background image behind UI */
 html, body { background: transparent !important; }
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: var(--background-image) center/cover no-repeat;
-  filter: blur(var(--blur));
+  background-image: var(--background-image);
+  background-position: var(--bg-position);
+  background-size: var(--bg-size);
+  background-repeat: var(--bg-repeat);
+  filter: blur(var(--bg-blur));
 }
 
-/* Transparent app layers */
+/* make upper layers transparent */
 #app-mount,
 [class^="app-"], [class*=" app-"],
 [class^="bg-"],
@@ -45,7 +53,7 @@ body::before {
   background: transparent !important;
 }
 
-/* Accent colors */
+/* accents (kept simple) */
 [class*="button-"], [class*="btn-"] {
   background-color: var(--main-color) !important;
   color: #fff !important;
@@ -56,13 +64,13 @@ body::before {
   background-color: var(--secondary-color) !important;
 }
 
-/* Glow for all text on hover */
+/* text glow on hover (icons excluded) */
 body *:not(svg):not(path):not(img):hover {
   text-shadow: var(--text-glow-hover) !important;
   transition: text-shadow 0.25s ease;
 }
 
-/* Respect reduced motion */
+/* reduced motion */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
