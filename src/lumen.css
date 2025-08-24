@@ -1,80 +1,138 @@
-/* Lumen Core Styles */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@400;600;700&display=swap");
+/* Lumen — core stylesheet */
+/* Maps Lumen custom properties to Discord tokens and applies core styling */
 
-/* === Root Variables (from theme) === */
+/* Safe defaults (used if the theme file fails to load) */
 :root {
-  /* Fonts */
-  --font-primary: 'Inter', sans-serif;
-  --font-secondary: 'Montserrat', sans-serif;
+  --lumen-font-primary: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --lumen-font-secondary: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --lumen-font-weight: 500;
+  --lumen-heading-weight: 600;
+  --lumen-letter-spacing: 0.01em;
 
-  --font-primary-weight: 400;
-  --font-secondary-weight: 600;
+  --lumen-glow-color: rgba(255, 255, 255, 0.75);
+  --lumen-glow-size-sm: 6px;
+  --lumen-shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.45);
+  --lumen-shadow-strong: 0 6px 28px rgba(0, 0, 0, 0.6);
+  --lumen-radius: 12px;
+  --lumen-blur: 10px;
+  --lumen-transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* Glow & Shadows */
-  --text-glow: 0 0 6px hsla(0, 0%, 100%, 0.75);
-  --shadow-strong: 0 4px 16px hsla(0, 0%, 0%, 0.6);
-  --shadow-soft: 0 2px 8px hsla(0, 0%, 0%, 0.4);
+  --lumen-background-primary: #0a0a0a;
+  --lumen-background-secondary: #121212;
+  --lumen-background-tertiary: #161616;
+  --lumen-background-floating: #1b1b1b;
 
-  /* Transitions */
-  --transition-fast: 0.25s ease;
-  --transition-slow: 0.5s ease;
-
-  /* Custom Colors (enabled/disabled via theme) */
-  --use-custom-colors: 1;
-
-  --background-primary: hsla(0, 0%, 5%, 1);
-  --background-secondary: hsla(0, 0%, 8%, 1);
-  --background-tertiary: hsla(0, 0%, 12%, 1);
-
-  --text-color: hsla(0, 0%, 95%, 1);
-  --text-muted: hsla(0, 0%, 65%, 1);
+  --lumen-text-color: rgba(255, 255, 255, 0.9);
+  --lumen-text-muted: rgba(255, 255, 255, 0.6);
+  --lumen-accent: #7aa2ff;
 }
 
-/* === Base Layouts === */
-body, .appMount-3lHmkl {
+/* Map Lumen variables into Discord design tokens (dark theme) */
+.theme-dark {
+  --background-primary: var(--lumen-background-primary);
+  --background-secondary: var(--lumen-background-secondary);
+  --background-tertiary: var(--lumen-background-tertiary);
+  --background-floating: var(--lumen-background-floating);
+
+  --header-primary: var(--lumen-text-color);
+  --header-secondary: var(--lumen-text-muted);
+  --text-normal: var(--lumen-text-color);
+  --text-muted: var(--lumen-text-muted);
+
+  --interactive-normal: var(--lumen-text-muted);
+  --interactive-hover: var(--lumen-text-color);
+  --interactive-active: var(--lumen-text-color);
+  --interactive-muted: color-mix(in srgb, var(--lumen-text-muted) 70%, transparent);
+
+  --brand-500: var(--lumen-accent);
+  --link-color: var(--lumen-accent);
+
+  --radius-medium: var(--lumen-radius);
+}
+
+/* Global typography and base surface */
+html, body, .appMount-3lHmkl {
+  font-family: var(--lumen-font-primary) !important;
+  font-weight: var(--lumen-font-weight);
+  letter-spacing: var(--lumen-letter-spacing);
+  color: var(--text-normal);
   background: var(--background-primary);
-  color: var(--text-color);
-  font-family: var(--font-primary);
-  font-weight: var(--font-primary-weight);
-  transition: background var(--transition-slow), color var(--transition-fast);
 }
 
-/* Panels & Containers */
+/* Heading typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--lumen-font-secondary) !important;
+  font-weight: var(--lumen-heading-weight);
+  letter-spacing: calc(var(--lumen-letter-spacing) + 0.01em);
+  color: var(--text-normal);
+}
+
+/* Core panels and containers (rounded, blurred, shadowed) */
 .container-2RRFHK,
 .chatContent-3KubbW,
 .sidebar-1tnWFu,
-.container-1D34oG {
-  background: var(--background-secondary);
-  box-shadow: var(--shadow-soft);
-  border-radius: 12px;
-  transition: background var(--transition-slow), box-shadow var(--transition-fast);
+.panels-3wFtMD,
+.membersWrap-3NUR2t,
+.container-1D34oG,
+.content-1jQy2l,
+.container-ZMc96U {
+  background-color: var(--background-secondary);
+  border-radius: var(--lumen-radius);
+  backdrop-filter: blur(var(--lumen-blur));
+  box-shadow: var(--lumen-shadow-soft);
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-secondary);
-  font-weight: var(--font-secondary-weight);
-  color: var(--text-color);
-  text-shadow: none;
-  transition: color var(--transition-fast), text-shadow var(--transition-fast);
+/* Elevated layers (modals/popouts) */
+.layer-86YKbF,
+.modal-3Crloo,
+.popout-2iWAc-,
+.container-3wLKDe {
+  background-color: var(--background-floating);
+  box-shadow: var(--lumen-shadow-strong);
+  border-radius: var(--lumen-radius);
 }
 
-/* Paragraphs & Text */
-span, p, div {
-  font-family: var(--font-primary);
-  font-weight: var(--font-primary-weight);
-  color: var(--text-muted);
-  transition: color var(--transition-fast), text-shadow var(--transition-fast);
+/* Smooth transitions on common UI elements */
+.container-2RRFHK,
+.chatContent-3KubbW,
+.sidebar-1tnWFu,
+.panels-3wFtMD,
+.membersWrap-3NUR2t,
+.container-3wLKDe,
+.modal-3Crloo,
+.toolbar-3_r2xA,
+button,
+a {
+  transition:
+    background-color var(--lumen-transition-fast),
+    color var(--lumen-transition-fast),
+    box-shadow var(--lumen-transition-fast),
+    text-shadow var(--lumen-transition-fast),
+    transform var(--lumen-transition-fast);
 }
 
-/* Glow on hover */
-span:hover, p:hover, a:hover, h1:hover, h2:hover, h3:hover {
-  text-shadow: var(--text-glow);
-  color: var(--text-color);
+/* Chat text + scoped hover glow (messages only) */
+article[class*="message"] .markup-eYLPri,
+article[class*="message"] .messageContent-2t3eCI {
+  color: var(--text-normal);
 }
 
-/* Strong Shadows for modals */
-.modal-3Crloo, .layer-86YKbF {
-  box-shadow: var(--shadow-strong);
-  background: var(--background-tertiary);
+article[class*="message"] .markup-eYLPri:hover,
+article[class*="message"] .messageContent-2t3eCI:hover {
+  text-shadow: 0 0 var(--lumen-glow-size-sm) var(--lumen-glow-color);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--lumen-accent) 35%, #000 65%);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--lumen-accent) 55%, #000 45%);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
 }
