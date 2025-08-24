@@ -1,8 +1,18 @@
 /* Base CSS for Lumen Theme */
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600&family=Rubik:wght@400;500;700&display=swap');
 
-/* Background layers */
-body::before {
+:root {
+  --overlay-color: rgba(0, 0, 0, 0.55);
+  --panel-bg: rgba(20, 20, 30, 0.45);
+  --panel-blur: 16px;
+  --panel-radius: 14px;
+  --text-color: #ffffff;
+  --text-muted: #cccccc;
+  --transition-fast: 0.25s ease;
+}
+
+/* Background layers on app mount */
+#app-mount::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -14,7 +24,7 @@ body::before {
   filter: blur(var(--bg-blur));
 }
 
-body::after {
+#app-mount::after {
   content: "";
   position: fixed;
   inset: 0;
@@ -47,13 +57,8 @@ span, p, div {
   transition: text-shadow var(--transition-fast), color var(--transition-fast);
 }
 
-/* Hover glow */
-span:hover, 
-p:hover, 
-a:hover, 
-h1:hover, 
-h2:hover, 
-h3:hover {
+/* ✅ Glow только для сообщений */
+.messageContent-2t3eCI:hover {
   text-shadow: var(--text-glow-hover);
   color: var(--text-glow-hover-color);
 }
