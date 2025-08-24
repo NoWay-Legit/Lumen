@@ -2,66 +2,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600&family=Rubik:wght@400;500;700&display=swap');
 
 :root {
-  --overlay-color: rgba(0,0,0,0.55);
-  --panel-bg: rgba(20,20,30,0.45);
+  --overlay-color: rgba(0, 0, 0, 0.55);
+  --panel-bg: rgba(20, 20, 30, 0.45);
   --panel-blur: 16px;
   --panel-radius: 14px;
   --text-color: #ffffff;
+  --text-muted: #cccccc;
   --transition-fast: 0.25s ease;
-
-  --indicator-unread: #8afcff;
-  --indicator-selected: #ff66cc;
-  --indicator-voice: #7dff7d;
 }
 
+/* Background layers */
 body::before {
-  content:""; position:fixed; inset:0; z-index:-2;
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
   background-image: var(--background-image);
   background-position: var(--bg-position);
   background-size: var(--bg-size);
+  background-repeat: var(--bg-repeat);
   filter: blur(var(--bg-blur));
 }
+
 body::after {
-  content:""; position:fixed; inset:0; z-index:-1;
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background: var(--overlay-color);
 }
 
-.appMount-3lHmkl, .container-2RRFHK, .chatContent-3KubbW, .sidebar-1tnWFu, .container-1D34oG {
+/* General UI panels */
+.appMount-3lHmkl,
+.container-2RRFHK,
+.chatContent-3KubbW,
+.sidebar-1tnWFu,
+.container-1D34oG {
   background: var(--panel-bg);
   backdrop-filter: blur(var(--panel-blur));
   border-radius: var(--panel-radius);
 }
 
+/* Text styling */
 * {
   font-family: var(--font-primary) !important;
   color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+span, p, div {
   transition: text-shadow var(--transition-fast), color var(--transition-fast);
 }
 
-mark, .markup-eYLPri, .messageContent-2t3eCI, .channelName-3KPsGw, .title-29uC1r, .name-28HaxV {
-  transition: text-shadow var(--transition-fast), color var(--transition-fast);
-}
-.markup-eYLPri:hover, .messageContent-2t3eCI:hover, .channelName-3KPsGw:hover, .title-29uC1r:hover, .name-28HaxV:hover {
-  text-shadow: var(--text-glow-hover);
-  color: var(--text-glow-hover-color);
+/* ============================
+   Glow — only in chat content
+   ============================ */
+[class^="chatContent-"] [class^="messageContent-"]:hover,
+[class^="chatContent-"] [class^="markup-"]:hover {
+  text-shadow: var(--text-glow-hover) !important;
+  color: var(--text-glow-hover-color) !important; /* keep original color */
 }
 
-/* Modern Indicators */
-.containerDefault-3GGEv_.unread-36eUEm {
+/* Anti-glow: prevent glowing in members/sidebars */
+[class^="membersWrap-"] *:hover,
+[class^="member-"] *:hover,
+[class^="containerDefault-"] [class^="name-"]:hover,
+[class^="sidebar-"] *:hover {
+  text-shadow: none !important;
+}
+
+/* ============================================
+   Modern Indicators — theme variables
+   ============================================ */
+
+/* Unread */
+[class^="containerDefault-"][class*="unread-"] {
   border-left: 4px solid var(--indicator-unread) !important;
   border-radius: 0 4px 4px 0;
+  margin-left: -4px;
 }
-.containerDefault-3GGEv_.selected-2TbFuo {
+
+/* Selected */
+[class^="containerDefault-"][class*="selected-"] {
   border-left: 4px solid var(--indicator-selected) !important;
   border-radius: 0 4px 4px 0;
-  background: rgba(255,102,204,0.08);
+  margin-left: -4px;
+  background: color-mix(in srgb, var(--indicator-selected) 10%, transparent);
 }
-.containerDefault-3GGEv_.modeConnected-2IEL4z {
+
+/* Voice (connected) */
+[class^="containerDefault-"][class*="modeConnected-"] {
   border-left: 4px solid var(--indicator-voice) !important;
   border-radius: 0 4px 4px 0;
-  background: rgba(125,255,125,0.06);
+  margin-left: -4px;
+  background: color-mix(in srgb, var(--indicator-voice) 9%, transparent);
 }
-.containerDefault-3GGEv_:hover {
-  background: rgba(255,255,255,0.04);
-  transition: background var(--transition-fast);
+
+/* Hover polish for channels */
+[class^="containerDefault-"]:hover {
+  background: rgba(255, 255, 255, 0.04);
+  transition: background var(--transition-fast, 0.25s ease);
 }
