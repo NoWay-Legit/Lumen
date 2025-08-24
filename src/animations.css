@@ -1,0 +1,18 @@
+/* Animations for Lumen */
+:root {
+  --anim-fast: 0.2s ease;
+  --anim-medium: 0.4s ease;
+  --anim-slow: 0.7s ease;
+}
+
+button,
+a,
+[role="button"] {
+  transition: transform var(--anim-fast), background var(--anim-medium), color var(--anim-fast);
+}
+
+button:hover,
+a:hover,
+[role="button"]:hover {
+  transform: scale(1.05);
+}
