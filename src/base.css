@@ -1,0 +1,55 @@
+/* Base styles for Lumen */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600&family=Rubik:wght@300;400;600&display=swap');
+
+:root {
+  --background-image: none;
+  --main-color: #7289da;
+  --secondary-color: #99aab5;
+  --font: 'Sora', 'Rubik', sans-serif;
+  --blur: 8px;
+}
+
+/* Font everywhere */
+html, body, #app-mount, [id="app-mount"] {
+  font-family: var(--font) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Background behind UI */
+html, body { background: transparent !important; }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: var(--background-image) center/cover no-repeat;
+  filter: blur(var(--blur));
+}
+
+/* Transparent app layers */
+#app-mount,
+[class^="app-"], [class*=" app-"],
+[class^="bg-"],
+[class^="base-"],
+[class^="layers-"] {
+  background: transparent !important;
+}
+
+/* Accent colors */
+[class*="button-"], [class*="btn-"] {
+  background-color: var(--main-color) !important;
+  color: #fff !important;
+  border-radius: 8px;
+  transition: background-color 0.25s ease;
+}
+[class*="button-"]:hover {
+  background-color: var(--secondary-color) !important;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
