@@ -1,102 +1,54 @@
-/* Base CSS for Lumen Theme */
+/* Base CSS for Lumen Theme (minimal, no glow, no indicators, no bg image) */
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600&family=Rubik:wght@400;500;700&display=swap');
 
-:root {
-  --overlay-color: rgba(0, 0, 0, 0.55);
-  --panel-bg: rgba(0, 0, 0, 0.7);
-  --panel-blur: 16px;
-  --panel-radius: 14px;
-
-  --text-color: #ffffff;
-  --text-muted: #b0b0b0;
-
-  --accent-color: #5f9bff;
-  --accent-color-hover: #7db5ff;
-
-  --transition-fast: 0.25s ease;
-
-  --text-glow-hover: 0 0 6px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.4);
-  --text-glow-hover-color: #ffffff;
-
-  --indicator-unread: #ff5f5f;
-  --indicator-selected: #5f9bff;
-  --indicator-voice: #7dffb0;
-
-  --bg-color: #000000; /* default background */
+/* 1) Global font + page background */
+html, body, #app-mount {
+  background: var(--bg-color, #000) !important;
 }
-
-/* Global background */
-body {
-  background: var(--bg-color) !important;
-}
-
-/* General UI panels */
-.appMount-3lHmkl,
-.container-2RRFHK,
-.chatContent-3KubbW,
-.sidebar-1tnWFu,
-.container-1D34oG {
-  background: var(--panel-bg);
-  backdrop-filter: blur(var(--panel-blur));
-  border-radius: var(--panel-radius);
-}
-
-/* Text styling */
 * {
-  font-family: var(--font-primary), sans-serif !important;
-  color: var(--text-color);
+  font-family: var(--font-primary, 'Rubik', system-ui, -apple-system, Segoe UI, Arial, sans-serif) !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
+/* 2) Map Lumen variables -> Discord design tokens (reliable approach) */
+:root {
+  /* Surfaces */
+  --background-primary: var(--panel-bg, #0e0f12);
+  --background-secondary: var(--panel-bg, #0e0f12);
+  --background-secondary-alt: var(--panel-bg, #0e0f12);
+  --background-tertiary: var(--panel-bg, #0e0f12);
+  --background-floating: var(--panel-bg, #0e0f12);
+  --modal-background: var(--panel-bg, #0e0f12);
+  --channeltextarea-background: var(--panel-bg, #0e0f12);
+
+  /* Text */
+  --header-primary: var(--text-color, #fff);
+  --header-secondary: var(--text-muted, #b8b8b8);
+  --text-normal: var(--text-color, #fff);
+  --text-muted: var(--text-muted, #b8b8b8);
+
+  /* Interactive (links, buttons, toggles) */
+  --interactive-normal: var(--accent-color, #7aa2ff);
+  --interactive-hover: var(--accent-color-hover, #9bb9ff);
+  --interactive-active: var(--accent-color, #7aa2ff);
+  --interactive-muted: #6e6e6e;
 }
 
-span, p, div, a {
-  transition: text-shadow var(--transition-fast), color var(--transition-fast);
-}
-
-/* Hover glow only for main chat text */
-.messageContent-2t3eCI span:hover,
-.messageContent-2t3eCI p:hover {
-  text-shadow: var(--text-glow-hover);
-  color: var(--text-glow-hover-color);
-}
-
-/* Muted text */
-.muted-3s3u3-,
-.subtext-3CDbHg,
-.description-1M7Q2Y {
-  color: var(--text-muted) !important;
-}
-
-/* Accent colors for buttons and links */
-.button-1EGGcP,
-.lookFilled-yCfaCM.colorBrand-I6CyqQ {
-  background-color: var(--accent-color);
-  transition: background-color var(--transition-fast);
-}
-
-.button-1EGGcP:hover,
-.lookFilled-yCfaCM.colorBrand-I6CyqQ:hover {
-  background-color: var(--accent-color-hover);
-}
-
-/* Links */
+/* 3) Basic link styling (lean, respects Discord tokens) */
 a {
-  color: var(--accent-color);
+  color: var(--interactive-normal);
+  transition: color .2s ease;
 }
 a:hover {
-  color: var(--accent-color-hover);
-  text-shadow: var(--text-glow-hover);
+  color: var(--interactive-hover);
 }
 
-/* Modern Indicators support */
-.unread-36eUEm {
-  background-color: var(--indicator-unread) !important;
-}
-.selected-3s45Ha .content-1x5b-n {
-  border-left: 4px solid var(--indicator-selected) !important;
-}
-.voiceUser-14U_NN {
-  border-left: 4px solid var(--indicator-voice) !important;
+/* 4) Optional rounding for common containers (very safe selectors) */
+[class^="container-"],
+[class*=" container-"],
+[class^="content-"],
+[class^="chat-"],
+[class^="sidebar-"],
+[class^="membersWrap-"],
+[class^="panels-"] {
+  border-radius: 8px;
 }
