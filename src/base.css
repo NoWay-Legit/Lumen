@@ -3,33 +3,31 @@
 
 :root {
   --overlay-color: rgba(0, 0, 0, 0.55);
-  --panel-bg: rgba(20, 20, 30, 0.45);
+  --panel-bg: rgba(0, 0, 0, 0.7);
   --panel-blur: 16px;
   --panel-radius: 14px;
+
   --text-color: #ffffff;
-  --text-muted: #cccccc;
+  --text-muted: #b0b0b0;
+
+  --accent-color: #5f9bff;
+  --accent-color-hover: #7db5ff;
+
   --transition-fast: 0.25s ease;
+
+  --text-glow-hover: 0 0 6px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.4);
+  --text-glow-hover-color: #ffffff;
+
+  --indicator-unread: #ff5f5f;
+  --indicator-selected: #5f9bff;
+  --indicator-voice: #7dffb0;
+
+  --bg-color: #000000; /* default background */
 }
 
-/* Background layers */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  background-image: var(--background-image);
-  background-position: var(--bg-position);
-  background-size: var(--bg-size);
-  background-repeat: var(--bg-repeat);
-  filter: blur(var(--bg-blur));
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: var(--overlay-color);
+/* Global background */
+body {
+  background: var(--bg-color) !important;
 }
 
 /* General UI panels */
@@ -45,7 +43,7 @@ body::after {
 
 /* Text styling */
 * {
-  font-family: var(--font-primary) !important;
+  font-family: var(--font-primary), sans-serif !important;
   color: var(--text-color);
 }
 
@@ -53,56 +51,52 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-span, p, div {
+span, p, div, a {
   transition: text-shadow var(--transition-fast), color var(--transition-fast);
 }
 
-/* ============================
-   Glow — only in chat content
-   ============================ */
-[class^="chatContent-"] [class^="messageContent-"]:hover,
-[class^="chatContent-"] [class^="markup-"]:hover {
-  text-shadow: var(--text-glow-hover) !important;
-  color: var(--text-glow-hover-color) !important; /* keep original color */
+/* Hover glow only for main chat text */
+.messageContent-2t3eCI span:hover,
+.messageContent-2t3eCI p:hover {
+  text-shadow: var(--text-glow-hover);
+  color: var(--text-glow-hover-color);
 }
 
-/* Anti-glow: prevent glowing in members/sidebars */
-[class^="membersWrap-"] *:hover,
-[class^="member-"] *:hover,
-[class^="containerDefault-"] [class^="name-"]:hover,
-[class^="sidebar-"] *:hover {
-  text-shadow: none !important;
+/* Muted text */
+.muted-3s3u3-,
+.subtext-3CDbHg,
+.description-1M7Q2Y {
+  color: var(--text-muted) !important;
 }
 
-/* ============================================
-   Modern Indicators — theme variables
-   ============================================ */
-
-/* Unread */
-[class^="containerDefault-"][class*="unread-"] {
-  border-left: 4px solid var(--indicator-unread) !important;
-  border-radius: 0 4px 4px 0;
-  margin-left: -4px;
+/* Accent colors for buttons and links */
+.button-1EGGcP,
+.lookFilled-yCfaCM.colorBrand-I6CyqQ {
+  background-color: var(--accent-color);
+  transition: background-color var(--transition-fast);
 }
 
-/* Selected */
-[class^="containerDefault-"][class*="selected-"] {
+.button-1EGGcP:hover,
+.lookFilled-yCfaCM.colorBrand-I6CyqQ:hover {
+  background-color: var(--accent-color-hover);
+}
+
+/* Links */
+a {
+  color: var(--accent-color);
+}
+a:hover {
+  color: var(--accent-color-hover);
+  text-shadow: var(--text-glow-hover);
+}
+
+/* Modern Indicators support */
+.unread-36eUEm {
+  background-color: var(--indicator-unread) !important;
+}
+.selected-3s45Ha .content-1x5b-n {
   border-left: 4px solid var(--indicator-selected) !important;
-  border-radius: 0 4px 4px 0;
-  margin-left: -4px;
-  background: color-mix(in srgb, var(--indicator-selected) 10%, transparent);
 }
-
-/* Voice (connected) */
-[class^="containerDefault-"][class*="modeConnected-"] {
+.voiceUser-14U_NN {
   border-left: 4px solid var(--indicator-voice) !important;
-  border-radius: 0 4px 4px 0;
-  margin-left: -4px;
-  background: color-mix(in srgb, var(--indicator-voice) 9%, transparent);
-}
-
-/* Hover polish for channels */
-[class^="containerDefault-"]:hover {
-  background: rgba(255, 255, 255, 0.04);
-  transition: background var(--transition-fast, 0.25s ease);
 }
